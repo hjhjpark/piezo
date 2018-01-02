@@ -12,11 +12,12 @@ int noteDurations[] = {4,4,4,4,4,4,2,4,4,4,4,1,4,4,4,4,4,4,2,4,4,4,4,1};
 void setup() {
   for (int thisNote = 0; thisNote < 24; thisNote++)
   {
-    int noteDuration = 1000 / noteDurations[thisNote];
-    tone(D7, melody[thisNote], noteDuration); //소리를 낸다.
-    int pauseBetweenNotes = noteDuration * 1.30;      //delay 계산식
+    int noteDuration = 800 / noteDurations[thisNote];
+    tone(D7, melody[thisNote], noteDuration); 
+    int pauseBetweenNotes = noteDuration * 1.30;      
     delay(pauseBetweenNotes);                         //delay
-    noTone(D7);                               //대상핀 출력 중단
+   if(thisNote==23)
+    noTone(D7);                               
   }
 }
  
